@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Prueba_interRapidisimo_Prueba_interRapidisimoUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Prueba_interRapidisimo_Prueba_interRapidisimoUITests
+@end
