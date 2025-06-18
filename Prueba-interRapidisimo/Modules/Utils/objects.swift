@@ -8,12 +8,13 @@
 import Foundation
 import UIKit
 
+/// Extension de UIView que realiza la creacion de componentes visuales reutilizables.
 extension UIView {
-    
-    var defaultColor: UIColor {
+    ///Color por defecto
+     var defaultColor: UIColor {
         UIColor(red: 49/255, green: 54/255, blue: 140/255, alpha: 1)
     }
-    
+    /// Crea un UILabel configurado con estilo personalizado.
     static func createLabel(
         text: String,
         color: UIColor = .black,
@@ -31,7 +32,7 @@ extension UIView {
         
         return label
     }
-    
+    /// Crea un boton personalizado con accion.
     func createCustomButton(title: String, titleColor: UIColor, borderColor: UIColor, backgroundColor: UIColor, target: Any, action: Selector ) -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
@@ -45,7 +46,7 @@ extension UIView {
         button.addTarget(target, action: action, for: .touchUpInside)
         return button
     }
-    
+    /// Crea un UIStackView  configurado con distribución y espaciado personalizado.
     static func createStackView(
         axis: NSLayoutConstraint.Axis = .vertical,
         spacing: CGFloat = 10,

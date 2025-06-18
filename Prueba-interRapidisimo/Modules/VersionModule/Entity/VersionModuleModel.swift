@@ -12,12 +12,11 @@ import UIKit
 struct VersionModuleModel {	
 }
 
-///Estructuras para poder convertir los archivos tipo JSON a archivo legible en swift
-
+/// Modelo para respuesta de version del backend.
 struct VersionResponse: Codable{
     let versionOfficial: String
 }
-
+/// Modelo para los datos enviados en el cuerpo (body) del POST de autenticacion.
 struct dataAuthRequest: Codable{
     let Mac: String
     let NomAplicacion: String
@@ -25,13 +24,14 @@ struct dataAuthRequest: Codable{
     let Path: String
     let Usuario: String
 }
-
+/// Modelo para la respuesta recibida de autenticacion.
+/// Contiene la informacion del usuario autenticado.
 struct dataAuthResponse: Codable{
     let Usuario: String
     let Identificacion: String
     let Nombre: String
 }
-
+/// Modelo para la respuesta que contiene la definición de cada tabla
 struct dataBoard: Codable {
     let NombreTabla: String
     let Pk: String

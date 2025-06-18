@@ -11,19 +11,23 @@ import UIKit
 import Alamofire
 import CoreData
 
+/// Interactor del modulo que maneja la logica de negocio
 class VersionModuleInteractor: VersionModuleInteractorProtocol {
     
     var presenter: VersionModulePresenterProtocol?
-	// MARK: - Interactor - Private Methods
 }
 
 extension VersionModuleInteractor {
     
-    /// FUNCION PARA GUARDAR ESQUEMA EN CORE DATA
+    // MARK: - Persistencia
     
+    /// Guarda el listado de esquemas de tabla en Core Data.
+    /// Antes de guardar, elimina los datos existentes para evitar duplicados.
     func saveDataCoreData(_ modelos: [dataBoard]) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
+        
+        cleanDataTable()
 
         for modelo in modelos {
             let entidad = TablaEsquema(context: context)
@@ -36,9 +40,14 @@ extension VersionModuleInteractor {
             entidad.numeroCampos = Int32(modelo.NumeroCampos)
             entidad.metodoApp = modelo.MetodoApp
 
-            let formatter = ISO8601DateFormatter()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+
             if let fecha = formatter.date(from: modelo.FechaActualizacionSincro) {
                 entidad.fechaActualizacionSincro = fecha
+            } else {
+                print("No se pudo parsear la fecha: \(modelo.FechaActualizacionSincro)")
             }
         }
 
@@ -51,11 +60,29 @@ extension VersionModuleInteractor {
     }
 }
 
-// MARK: - Interactor - Public Methods (Through Protocol)
+/// Elimina todos los registros previos de la entidad  TablaEsquema  en Core Data.
+func cleanDataTable() {
+    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+    let context = appDelegate.persistentContainer.viewContext
+
+    let fetchRequest: NSFetchRequest<NSFetchRequestResult> = TablaEsquema.fetchRequest()
+    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+    do {
+        try context.execute(deleteRequest)
+        try context.save()
+        print("limpia antes de guardar nuevos datos")
+    } catch {
+        print("Error al limpiar datos previos: \(error)")
+    }
+}
+
 extension VersionModuleInteractor {
     
-    ///Realiza la peticion GET con URLSession  para obtener la versión
+    // MARK: - Servicios REST
     
+    /// Realiza una peticion GET para obtener la version actual de la app desde el servidor.
+    /// Parameter completion: Devuelve la version remota como String o un Error si falla.
     func fetchRemoteVersion(completion: @escaping (Result<String, Error>) -> Void) {
         let urlString = "https://apitesting.interrapidisimo.co/apicontrollerpruebas/api/ParametrosFramework/ConsultarParametrosFramework/VPStoreAppControl"
         
@@ -65,25 +92,19 @@ extension VersionModuleInteractor {
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            
-            ///Validamos errores en la red
-            
+                        
             if let error = error {
                 completion(.failure(error))
                 return
             }
             
-            /// Validamos que la respuesta sea valida y el status sea 200
-
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode == 200,
                   let data = data else {
                 completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Respuesta invalida"])))
                 return
             }
-            
-            ///Se codifica la version para poderla leer en nuestro formato
-            
+                        
             do {
                 let decoder = JSONDecoder()
                 let remoteVersion = try JSONDecoder().decode(String.self, from: data)
@@ -96,6 +117,8 @@ extension VersionModuleInteractor {
         task.resume()
     }
     
+    /// Funcion para Autenticacion, se realiza un POST para obtener autenticacion y datos de usuario
+    /// Parameter completion: Devuelve un objeto dataAuthResponse con los datos del usuario o un error.
     func autUser(completion: @escaping (Result<dataAuthResponse, any Error>) -> Void) {
         let urlString = "https://apitesting.interrapidisimo.co/FtEntregaElectronica/MultiCanales/ApiSeguridadPruebas/api/Seguridad/AuthenticaUsuarioApp"
         guard let url = URL(string: urlString) else {
@@ -115,7 +138,6 @@ extension VersionModuleInteractor {
         request.addValue("9", forHTTPHeaderField: "IdAplicativoOrigen")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        /// Body (cuerpo)
         
         let body = dataAuthRequest(Mac: "", NomAplicacion: "Controller APP", Password: "SW50ZXIyMDIx\n", Path: "", Usuario: "cGFtLm1lcmVkeTIx\n")
         
@@ -126,9 +148,7 @@ extension VersionModuleInteractor {
             completion(.failure(error))
             return
         }
-        
-        ///PETICION
-        
+                
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
@@ -161,19 +181,39 @@ extension VersionModuleInteractor {
         task.resume()
     }
     
+    /// Realiza una peticion GET para obtener la estructura de las tablas del sistema.
+    /// Parameter completion: Informa si la operación fue exitosa o si hubo un error.
     func obtainBoard(completion: @escaping (Result<Void, Error>) -> Void) {
         let urlString = "https://apitesting.interrapidisimo.co/apicontrollerpruebas/api/SincronizadorDatos/ObtenerEsquema/true"
-        
+
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "URL inválida"])))
             return
         }
 
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+
+        request.addValue("pam.meredy21", forHTTPHeaderField: "Usuario")
+        request.addValue("987204545", forHTTPHeaderField: "Identificacion")
+        request.addValue("text/json", forHTTPHeaderField: "Accept")
+        request.addValue("pam.meredy21", forHTTPHeaderField: "IdUsuario")
+        request.addValue("1295", forHTTPHeaderField: "IdCentroServicio")
+        request.addValue("PTO/BOGOTA/CUND/COL/OF PRINCIPAL - CRA 30 # 7-45", forHTTPHeaderField: "NombreCentroServicio")
+        request.addValue("9", forHTTPHeaderField: "IdAplicativoOrigen")
+
+        let config = URLSessionConfiguration.default
+        config.httpCookieAcceptPolicy = .always
+        config.httpShouldSetCookies = true
+        config.httpCookieStorage = HTTPCookieStorage.shared
+        let session = URLSession(configuration: config)
+
+        let task = session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
             }
+
 
             guard let data = data,
                   let httpResponse = response as? HTTPURLResponse,
