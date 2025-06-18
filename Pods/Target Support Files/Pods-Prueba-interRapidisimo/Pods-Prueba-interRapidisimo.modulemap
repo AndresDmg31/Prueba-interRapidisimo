@@ -1,0 +1,6 @@
+framework module Pods_Prueba_interRapidisimo {
+  umbrella header "Pods-Prueba-interRapidisimo-umbrella.h"
+
+  export *
+  module * { export * }
+}
