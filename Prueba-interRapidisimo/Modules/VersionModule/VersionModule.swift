@@ -9,11 +9,9 @@
 
 import Foundation
 import UIKit
-
+/// La class versionmodule se encarga de ensamblar las dependencias (View, Presenter, Interactor, Router)
 class VersionModule {
     
-    /// <#Description#>
-    /// - Returns: `VersionModuleViewController` Object
         static func build() -> UIViewController {
         let interactor: VersionModuleInteractorProtocol = VersionModuleInteractor()
         let router: VersionModuleRouterProtocol = VersionModuleRouter()

@@ -8,23 +8,23 @@
 //
 
 import UIKit
-
+/// Router del modulo se encarga de la navegacion hacia otros modulos de la app .
 class VersionModuleRouter: VersionModuleRouterProtocol {
+    var navigation: UINavigationController?
+    weak var viewController: UIViewController?
+    
+    /// Función que navega hacia el modulo de visualizacion de tablas.
     func goBoard() {
-       /* let tablasVC = TablasModule.build()
-                view?.navigationController?.pushViewController(tablasVC, animated: true)*/
+        let tablesVC = TablesModule.build()
+        navigation?.pushViewController(tablesVC, animated: true)
     }
-    
+    /// Funcion que navega hacia el modulo de visualizacion de localidades.
     func goLocal() {
-       /* let localidadesVC = LocalidadesModule.build()
-                view?.navigationController?.pushViewController(localidadesVC, animated: true)*/
+        let localVC = LocalModule.build()
+        navigation?.pushViewController(localVC, animated: true)
     }
-    
 	weak var view: VersionModuleViewProtocol?
-    
-	// MARK: - Router - Private Methods
 }
 
-// MARK: - Router - Public Methods (Through Protocol)
 extension VersionModuleRouter {
 }

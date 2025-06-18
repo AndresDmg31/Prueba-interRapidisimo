@@ -8,13 +8,17 @@
 //
 
 import UIKit
-
+/// Vista principal del modulo.
 class VersionModuleView: UIView {
     
+    // MARK: - Navegación (Closures de callback)
+    /// Callback para navegar al modulo de tablas
     var tabGoBoard: (() -> Void)?
+    /// Callback para navegar al modulo de localidades
     var tabGoLocal: (() -> Void)?
     
-    /// Creacion de UILabel y Button para presentar datos en la view principal
+    // MARK: - UI Components
+    /// Creacion de UILabel,Button y stack  para presentar datos en la view principal.
 
     lazy var stackHome = VersionModuleView.createStackView(axis: .vertical,spacing: 10)
     lazy var title = VersionModuleView.createLabel(text: "Bienvenid@", color: defaultColor, size: 25, weight: .bold)
@@ -27,7 +31,7 @@ class VersionModuleView: UIView {
     lazy var buttonLocal = createCustomButton(title: "Ver Localidades", titleColor: .white, borderColor: defaultColor, backgroundColor: defaultColor, target: self, action: #selector(tabLocal))
 
     
-
+    // MARK: - Init
     
     override init(frame: CGRect) {
             super.init(frame: frame)
@@ -38,7 +42,9 @@ class VersionModuleView: UIView {
             super.init(coder: coder)
         }
     
-	//  MARK: - View - Initialization
+    // MARK: - Layout y estructura visual
+
+    /// Configuracion  de  jerarquía de vistas y constraints usando anclas personalizadas (utils).
     func addViews() {
         
         /// Configuracion de constraints y agregar objetos a la view
@@ -53,12 +59,12 @@ class VersionModuleView: UIView {
         addSubview(stackButton)
         
         stackHome.anchor(
-            top: topAnchor, paddingTop: 200,
+            top: topAnchor, paddingTop: 250,
             leading: leadingAnchor, paddingLeading: 30,
             trailing: trailingAnchor, paddingTrailing: 30
         )
         stackButton.anchor(
-            top: stackHome.bottomAnchor, paddingTop: 100,
+            top: stackHome.bottomAnchor, paddingTop: 250,
             leading: leadingAnchor, paddingLeading: 30,
             trailing: trailingAnchor, paddingTrailing: 30
         )
@@ -68,6 +74,9 @@ class VersionModuleView: UIView {
     
     }
     
+    // MARK: - Acciones
+
+    
     @objc private func tabBoard() {
         tabGoBoard?()
     }
@@ -76,14 +85,13 @@ class VersionModuleView: UIView {
         tabGoLocal?()
     }
     
+    // MARK: - Actualizacion de datos en la vista
+
+    /// Actualiza las etiquetas de datos del usuario
     func updateData(_ nombre: String, _ identificacion: String, _ usuario: String) {
         name.text = "Nombre:   \(nombre)"
         id.text = "Identificacion:   \(identificacion)"
         user.text = "Usuario:   \(usuario)"
-    }
-
-    func configView() {
-        // fill & config Self view
     }
 }
 

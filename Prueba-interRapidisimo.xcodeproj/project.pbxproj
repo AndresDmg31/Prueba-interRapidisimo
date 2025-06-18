@@ -28,6 +28,22 @@
 		CD5072CC2E023A8900FFDF20 /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD5072CA2E023A8900FFDF20 /* AppModel.xcdatamodeld */; };
 		CD5072CF2E02502600FFDF20 /* objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072CE2E02502600FFDF20 /* objects.swift */; };
 		CD5072D12E02565500FFDF20 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072D02E02565500FFDF20 /* Constraint.swift */; };
+		CD5072E22E02640100FFDF20 /* TablesModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072D42E02640100FFDF20 /* TablesModuleModel.swift */; };
+		CD5072E32E02640100FFDF20 /* TablesModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072D62E02640100FFDF20 /* TablesModuleInteractor.swift */; };
+		CD5072E42E02640100FFDF20 /* TablesModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072D82E02640100FFDF20 /* TablesModulePresenter.swift */; };
+		CD5072E52E02640100FFDF20 /* TablesModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072DA2E02640100FFDF20 /* TablesModuleRouter.swift */; };
+		CD5072E72E02640100FFDF20 /* TablesModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072DD2E02640100FFDF20 /* TablesModuleViewController.swift */; };
+		CD5072E82E02640100FFDF20 /* TablesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072DF2E02640100FFDF20 /* TablesModule.swift */; };
+		CD5072E92E02640100FFDF20 /* TablesModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072E02E02640100FFDF20 /* TablesModuleProtocols.swift */; };
+		CD5072FA2E02643000FFDF20 /* LocalModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072EC2E02643000FFDF20 /* LocalModuleModel.swift */; };
+		CD5072FB2E02643000FFDF20 /* LocalModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072EE2E02643000FFDF20 /* LocalModuleInteractor.swift */; };
+		CD5072FC2E02643000FFDF20 /* LocalModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072F02E02643000FFDF20 /* LocalModulePresenter.swift */; };
+		CD5072FD2E02643000FFDF20 /* LocalModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072F22E02643000FFDF20 /* LocalModuleRouter.swift */; };
+		CD5072FF2E02643000FFDF20 /* LocalModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072F52E02643000FFDF20 /* LocalModuleViewController.swift */; };
+		CD5073002E02643000FFDF20 /* LocalModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072F72E02643000FFDF20 /* LocalModule.swift */; };
+		CD5073012E02643000FFDF20 /* LocalModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072F82E02643000FFDF20 /* LocalModuleProtocols.swift */; };
+		CD58C1DD2E031C8D009C4995 /* cellDataEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58C1DC2E031C8D009C4995 /* cellDataEnum.swift */; };
+		CD58C1DF2E031CCC009C4995 /* customDataCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58C1DE2E031CCC009C4995 /* customDataCellTableViewCell.swift */; };
 		F636FA3512972DF426A6D2F2 /* Pods_Prueba_interRapidisimo_Prueba_interRapidisimoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ABE15451EDEFBFBAFAEBAB /* Pods_Prueba_interRapidisimo_Prueba_interRapidisimoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +95,22 @@
 		CD5072CB2E023A8900FFDF20 /* AppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppModel.xcdatamodel; sourceTree = "<group>"; };
 		CD5072CE2E02502600FFDF20 /* objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = objects.swift; sourceTree = "<group>"; };
 		CD5072D02E02565500FFDF20 /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		CD5072D42E02640100FFDF20 /* TablesModuleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablesModuleModel.swift; sourceTree = "<group>"; };
+		CD5072D62E02640100FFDF20 /* TablesModuleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablesModuleInteractor.swift; sourceTree = "<group>"; };
+		CD5072D82E02640100FFDF20 /* TablesModulePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablesModulePresenter.swift; sourceTree = "<group>"; };
+		CD5072DA2E02640100FFDF20 /* TablesModuleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablesModuleRouter.swift; sourceTree = "<group>"; };
+		CD5072DD2E02640100FFDF20 /* TablesModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablesModuleViewController.swift; sourceTree = "<group>"; };
+		CD5072DF2E02640100FFDF20 /* TablesModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablesModule.swift; sourceTree = "<group>"; };
+		CD5072E02E02640100FFDF20 /* TablesModuleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablesModuleProtocols.swift; sourceTree = "<group>"; };
+		CD5072EC2E02643000FFDF20 /* LocalModuleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalModuleModel.swift; sourceTree = "<group>"; };
+		CD5072EE2E02643000FFDF20 /* LocalModuleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalModuleInteractor.swift; sourceTree = "<group>"; };
+		CD5072F02E02643000FFDF20 /* LocalModulePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalModulePresenter.swift; sourceTree = "<group>"; };
+		CD5072F22E02643000FFDF20 /* LocalModuleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalModuleRouter.swift; sourceTree = "<group>"; };
+		CD5072F52E02643000FFDF20 /* LocalModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalModuleViewController.swift; sourceTree = "<group>"; };
+		CD5072F72E02643000FFDF20 /* LocalModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalModule.swift; sourceTree = "<group>"; };
+		CD5072F82E02643000FFDF20 /* LocalModuleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalModuleProtocols.swift; sourceTree = "<group>"; };
+		CD58C1DC2E031C8D009C4995 /* cellDataEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellDataEnum.swift; sourceTree = "<group>"; };
+		CD58C1DE2E031CCC009C4995 /* customDataCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customDataCellTableViewCell.swift; sourceTree = "<group>"; };
 		EBD1CA88AB179375CA80ECFA /* Pods-Prueba-interRapidisimoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba-interRapidisimoTests.debug.xcconfig"; path = "Target Support Files/Pods-Prueba-interRapidisimoTests/Pods-Prueba-interRapidisimoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC4CCFC54ED5FAC598FC9FB9 /* Pods-Prueba-interRapidisimo-Prueba-interRapidisimoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba-interRapidisimo-Prueba-interRapidisimoUITests.release.xcconfig"; path = "Target Support Files/Pods-Prueba-interRapidisimo-Prueba-interRapidisimoUITests/Pods-Prueba-interRapidisimo-Prueba-interRapidisimoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +223,8 @@
 		CD5072B12E01DB0400FFDF20 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CD5072F92E02643000FFDF20 /* LocalModule */,
+				CD5072E12E02640100FFDF20 /* TablesModule */,
 				CD5072CD2E024FF100FFDF20 /* Utils */,
 				CD5072C12E01DB4700FFDF20 /* VersionModule */,
 			);
@@ -257,8 +291,118 @@
 			children = (
 				CD5072CE2E02502600FFDF20 /* objects.swift */,
 				CD5072D02E02565500FFDF20 /* Constraint.swift */,
+				CD58C1DC2E031C8D009C4995 /* cellDataEnum.swift */,
+				CD58C1DE2E031CCC009C4995 /* customDataCellTableViewCell.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CD5072D52E02640100FFDF20 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072D42E02640100FFDF20 /* TablesModuleModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD5072D72E02640100FFDF20 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072D62E02640100FFDF20 /* TablesModuleInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CD5072D92E02640100FFDF20 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072D82E02640100FFDF20 /* TablesModulePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CD5072DB2E02640100FFDF20 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072DA2E02640100FFDF20 /* TablesModuleRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CD5072DE2E02640100FFDF20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072DD2E02640100FFDF20 /* TablesModuleViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD5072E12E02640100FFDF20 /* TablesModule */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072D52E02640100FFDF20 /* Entity */,
+				CD5072D72E02640100FFDF20 /* Interactor */,
+				CD5072D92E02640100FFDF20 /* Presenter */,
+				CD5072DB2E02640100FFDF20 /* Router */,
+				CD5072DE2E02640100FFDF20 /* View */,
+				CD5072DF2E02640100FFDF20 /* TablesModule.swift */,
+				CD5072E02E02640100FFDF20 /* TablesModuleProtocols.swift */,
+			);
+			path = TablesModule;
+			sourceTree = "<group>";
+		};
+		CD5072ED2E02643000FFDF20 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072EC2E02643000FFDF20 /* LocalModuleModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD5072EF2E02643000FFDF20 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072EE2E02643000FFDF20 /* LocalModuleInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CD5072F12E02643000FFDF20 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072F02E02643000FFDF20 /* LocalModulePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CD5072F32E02643000FFDF20 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072F22E02643000FFDF20 /* LocalModuleRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CD5072F62E02643000FFDF20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072F52E02643000FFDF20 /* LocalModuleViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD5072F92E02643000FFDF20 /* LocalModule */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072ED2E02643000FFDF20 /* Entity */,
+				CD5072EF2E02643000FFDF20 /* Interactor */,
+				CD5072F12E02643000FFDF20 /* Presenter */,
+				CD5072F32E02643000FFDF20 /* Router */,
+				CD5072F62E02643000FFDF20 /* View */,
+				CD5072F72E02643000FFDF20 /* LocalModule.swift */,
+				CD5072F82E02643000FFDF20 /* LocalModuleProtocols.swift */,
+			);
+			path = LocalModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,16 +647,32 @@
 				CD5072C22E01DB4700FFDF20 /* VersionModuleModel.swift in Sources */,
 				CD5072C62E01DB4700FFDF20 /* VersionModuleView.swift in Sources */,
 				CD5072C42E01DB4700FFDF20 /* VersionModulePresenter.swift in Sources */,
+				CD5072E32E02640100FFDF20 /* TablesModuleInteractor.swift in Sources */,
+				CD5072FD2E02643000FFDF20 /* LocalModuleRouter.swift in Sources */,
 				CD5072C92E01DB4700FFDF20 /* VersionModuleProtocols.swift in Sources */,
+				CD5072FA2E02643000FFDF20 /* LocalModuleModel.swift in Sources */,
+				CD5072FC2E02643000FFDF20 /* LocalModulePresenter.swift in Sources */,
+				CD58C1DD2E031C8D009C4995 /* cellDataEnum.swift in Sources */,
 				CD5072C52E01DB4700FFDF20 /* VersionModuleRouter.swift in Sources */,
+				CD5073002E02643000FFDF20 /* LocalModule.swift in Sources */,
+				CD5072FF2E02643000FFDF20 /* LocalModuleViewController.swift in Sources */,
 				CD5072C82E01DB4700FFDF20 /* VersionModule.swift in Sources */,
 				CD5072CF2E02502600FFDF20 /* objects.swift in Sources */,
 				CD5072C72E01DB4700FFDF20 /* VersionModuleViewController.swift in Sources */,
+				CD5073012E02643000FFDF20 /* LocalModuleProtocols.swift in Sources */,
+				CD5072E72E02640100FFDF20 /* TablesModuleViewController.swift in Sources */,
+				CD5072E82E02640100FFDF20 /* TablesModule.swift in Sources */,
+				CD5072E22E02640100FFDF20 /* TablesModuleModel.swift in Sources */,
 				CD5072CC2E023A8900FFDF20 /* AppModel.xcdatamodeld in Sources */,
+				CD5072E52E02640100FFDF20 /* TablesModuleRouter.swift in Sources */,
+				CD5072FB2E02643000FFDF20 /* LocalModuleInteractor.swift in Sources */,
 				CD202C462E01D4DD00287556 /* ViewController.swift in Sources */,
 				CD202C422E01D4DD00287556 /* AppDelegate.swift in Sources */,
 				CD5072C32E01DB4700FFDF20 /* VersionModuleInteractor.swift in Sources */,
 				CD5072D12E02565500FFDF20 /* Constraint.swift in Sources */,
+				CD5072E42E02640100FFDF20 /* TablesModulePresenter.swift in Sources */,
+				CD5072E92E02640100FFDF20 /* TablesModuleProtocols.swift in Sources */,
+				CD58C1DF2E031CCC009C4995 /* customDataCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
