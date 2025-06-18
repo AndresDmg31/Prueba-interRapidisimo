@@ -25,6 +25,9 @@
 		CD5072C72E01DB4700FFDF20 /* VersionModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072BD2E01DB4700FFDF20 /* VersionModuleViewController.swift */; };
 		CD5072C82E01DB4700FFDF20 /* VersionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072BF2E01DB4700FFDF20 /* VersionModule.swift */; };
 		CD5072C92E01DB4700FFDF20 /* VersionModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072C02E01DB4700FFDF20 /* VersionModuleProtocols.swift */; };
+		CD5072CC2E023A8900FFDF20 /* AppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD5072CA2E023A8900FFDF20 /* AppModel.xcdatamodeld */; };
+		CD5072CF2E02502600FFDF20 /* objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072CE2E02502600FFDF20 /* objects.swift */; };
+		CD5072D12E02565500FFDF20 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5072D02E02565500FFDF20 /* Constraint.swift */; };
 		F636FA3512972DF426A6D2F2 /* Pods_Prueba_interRapidisimo_Prueba_interRapidisimoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ABE15451EDEFBFBAFAEBAB /* Pods_Prueba_interRapidisimo_Prueba_interRapidisimoUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,9 @@
 		CD5072BD2E01DB4700FFDF20 /* VersionModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionModuleViewController.swift; sourceTree = "<group>"; };
 		CD5072BF2E01DB4700FFDF20 /* VersionModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionModule.swift; sourceTree = "<group>"; };
 		CD5072C02E01DB4700FFDF20 /* VersionModuleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionModuleProtocols.swift; sourceTree = "<group>"; };
+		CD5072CB2E023A8900FFDF20 /* AppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppModel.xcdatamodel; sourceTree = "<group>"; };
+		CD5072CE2E02502600FFDF20 /* objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = objects.swift; sourceTree = "<group>"; };
+		CD5072D02E02565500FFDF20 /* Constraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		EBD1CA88AB179375CA80ECFA /* Pods-Prueba-interRapidisimoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba-interRapidisimoTests.debug.xcconfig"; path = "Target Support Files/Pods-Prueba-interRapidisimoTests/Pods-Prueba-interRapidisimoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC4CCFC54ED5FAC598FC9FB9 /* Pods-Prueba-interRapidisimo-Prueba-interRapidisimoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba-interRapidisimo-Prueba-interRapidisimoUITests.release.xcconfig"; path = "Target Support Files/Pods-Prueba-interRapidisimo-Prueba-interRapidisimoUITests/Pods-Prueba-interRapidisimo-Prueba-interRapidisimoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +166,7 @@
 				CD202C4A2E01D4DF00287556 /* Assets.xcassets */,
 				CD202C4C2E01D4DF00287556 /* LaunchScreen.storyboard */,
 				CD202C4F2E01D4DF00287556 /* Info.plist */,
+				CD5072CA2E023A8900FFDF20 /* AppModel.xcdatamodeld */,
 			);
 			path = "Prueba-interRapidisimo";
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 		CD5072B12E01DB0400FFDF20 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CD5072CD2E024FF100FFDF20 /* Utils */,
 				CD5072C12E01DB4700FFDF20 /* VersionModule */,
 			);
 			path = Modules;
@@ -242,6 +250,15 @@
 				CD5072C02E01DB4700FFDF20 /* VersionModuleProtocols.swift */,
 			);
 			path = VersionModule;
+			sourceTree = "<group>";
+		};
+		CD5072CD2E024FF100FFDF20 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CD5072CE2E02502600FFDF20 /* objects.swift */,
+				CD5072D02E02565500FFDF20 /* Constraint.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,10 +506,13 @@
 				CD5072C92E01DB4700FFDF20 /* VersionModuleProtocols.swift in Sources */,
 				CD5072C52E01DB4700FFDF20 /* VersionModuleRouter.swift in Sources */,
 				CD5072C82E01DB4700FFDF20 /* VersionModule.swift in Sources */,
+				CD5072CF2E02502600FFDF20 /* objects.swift in Sources */,
 				CD5072C72E01DB4700FFDF20 /* VersionModuleViewController.swift in Sources */,
+				CD5072CC2E023A8900FFDF20 /* AppModel.xcdatamodeld in Sources */,
 				CD202C462E01D4DD00287556 /* ViewController.swift in Sources */,
 				CD202C422E01D4DD00287556 /* AppDelegate.swift in Sources */,
 				CD5072C32E01DB4700FFDF20 /* VersionModuleInteractor.swift in Sources */,
+				CD5072D12E02565500FFDF20 /* Constraint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,6 +867,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CD5072CA2E023A8900FFDF20 /* AppModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CD5072CB2E023A8900FFDF20 /* AppModel.xcdatamodel */,
+			);
+			currentVersion = CD5072CB2E023A8900FFDF20 /* AppModel.xcdatamodel */;
+			name = AppModel.xcdatamodeld;
+			path = "/Users/andresmartinezgonzalez/Desktop/Prueba-interRapidisimo/Prueba-interRapidisimo/AppModel.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CD202C362E01D4DD00287556 /* Project object */;
 }

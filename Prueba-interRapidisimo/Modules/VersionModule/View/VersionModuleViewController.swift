@@ -10,7 +10,7 @@
 import UIKit
 
 class VersionModuleViewController: UIViewController {
-
+    
     var viewPresenter: VersionModulePresenterProtocol?
     var rootView: VersionModuleView?
     // MARK: - View - Initialization
@@ -26,8 +26,15 @@ class VersionModuleViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         customizeUI()
+        configClousers()
         view.backgroundColor = .white
-        self.viewPresenter?.verificarVersion()
+        //self.viewPresenter?.verificarVersion()
+        self.viewPresenter?.startAuth()
+        let nombre = UserDefaults.standard.string(forKey: "nombre") ?? "Usuario"
+        let identificacion = UserDefaults.standard.string(forKey: "identificacion") ?? "Usuario"
+        let usuario = UserDefaults.standard.string(forKey: "usuario") ?? "Usuario"
+
+        rootView?.updateData(nombre,identificacion,usuario)
 
     }
 	
@@ -35,18 +42,34 @@ class VersionModuleViewController: UIViewController {
     func customizeUI() {
         rootView = VersionModuleView()
         view = rootView
-        // Call the Config func from rootView & fill the data
+    }
+    
+    func configClousers(){
+        rootView?.tabGoBoard = {
+            self.viewPresenter?.navigateToTables()
+        }
+        rootView?.tabGoLocal = {
+            self.viewPresenter?.navigateToLocal()
+        }
     }
 }
 
 // MARK: - View - Public Methods (Through Protocol)
 extension VersionModuleViewController: VersionModuleViewProtocol {
+    
     /// Funcion para mostrar alert referente a la versión que tenemos frente a la que recibimos de servicio
     
-    func mostrarAlertaVersion(mensaje: String) {
+    func showAlertVersion(mensaje: String) {
         let alert = UIAlertController(title: "Version de la app", message: mensaje, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
+    /// Funcion para mostrar alert cuando le peticon GET de los datos falla 
+    
+    func showAlet(mensaje: String){
+        let alert = UIAlertController(title: "Error", message: mensaje, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Aceptar", style: .default))
+                present(alert, animated: true)
+    }
 }

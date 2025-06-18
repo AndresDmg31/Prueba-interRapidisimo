@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="TablaEsquema" representedClassName="TablaEsquema" syncable="YES" codeGenerationType="class">
+        <attribute name="batchSize" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="error" optional="YES" attributeType="String"/>
+        <attribute name="fechaActualizacionSincro" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="filtro" optional="YES" attributeType="String"/>
+        <attribute name="metodoApp" optional="YES" attributeType="String"/>
+        <attribute name="nombreTabla" optional="YES" attributeType="String"/>
+        <attribute name="numeroCampos" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pk" optional="YES" attributeType="String"/>
+        <attribute name="queryCreacion" optional="YES" attributeType="String"/>
+    </entity>
+</model>
